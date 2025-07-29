@@ -1,0 +1,38 @@
+# envs/scanpy_env.yaml
+name: scanpy_env
+channels:
+  - conda-forge
+  - bioconda
+  # Do NOT include 'defaults' here for now. We'll rely on conda-forge and bioconda.
+  # This often helps avoid channel priority conflicts that can make environments unreadable.
+dependencies:
+  # Explicitly specify the Python version you want.
+  # Use the exact version, not the Snakemake config variable here, for maximum stability.
+  # Colab is currently Python 3.10.x or 3.11.x. Let's pick 3.10 for broader package compatibility.
+  - python=3.10
+  - scanpy
+  - numpy
+  - anndata
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - leidenalg
+  - python-igraph
+  - pip
+  - pip:
+    - adjusttext
+  # Add other critical packages that might be missing for harmony or other analysis steps
+  # It's good practice to add explicitly, even if some are dependencies of scanpy.
+  - numba # Often a dependency for UMAP/clustering performance
+  - UMAP-learn # For UMAP
+  - scikit-learn
+  - tqdm # For progress bars (useful in scripts)
+  - packaging # General dependency
+  - pytz # Timezone data (common dependency)
+  - tzdata # Timezone data (common dependency)
+  - openpyxl # If you plan to read/write Excel files
+  - h5py # For .h5ad files
+  - fsspec # For file system abstraction
+  - s3fs # If ever connecting to S3-like storage
+  - harmonypy
