@@ -1,0 +1,17 @@
+# config.yaml (Final version for zipping)
+samples:
+  - Muscle-Young-scRNAseq-rep1
+  - Muscle-Young-scRNAseq-rep2
+  - Muscle-Young-scRNAseq-rep3
+  - Muscle-Old-scRNAseq-rep1
+  - Muscle-Old-scRNAseq-rep2
+  - Muscle-Old-scRNAseq-rep3
+
+# *** IMPORTANT: This path points directly to the directory containing your sample folders in Google Drive ***
+data_dir: "/content/drive/MyDrive/RNAseq_AutoPipeline_Project/data"
+
+# This is where the results will be saved within the Colab runtime (temporary)
+output_dir: "/content/colab_project_results" # We'll copy this to Drive later
+
+scanpy_version: "1.9.3" # Ensure this is compatible with other packages. Check latest stable.
+python_version: "3.9"   # Matching Colab's default Python version is often good
